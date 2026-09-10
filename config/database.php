@@ -60,12 +60,12 @@ function unitStatusClass(string $status): string
     };
 }
 
-function unitStatusLabel(string $status, bool $long = false): string
+function unitStatusLabel(string $status): string
 {
     return match ($status) {
         'available' => 'Available',
-        'reserved' => $long ? 'Currently reserved' : 'Reserved',
-        'occupied' => $long ? 'Currently occupied' : 'Occupied',
+        'reserved' => 'Reserved',
+        'occupied' => 'Occupied',
         default => ucfirst($status),
     };
 }

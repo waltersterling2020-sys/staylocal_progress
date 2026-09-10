@@ -125,7 +125,7 @@ require __DIR__ . '/partials/header.php';
                         <a href="visit.php?unit_id=<?= (int)$unit['id'] ?>" class="button button-light full-width secondary-action">Schedule in-person visit</a>
                         <p class="visit-disclaimer">Reserve online, then schedule your viewing. Final contract signing is completed in person.</p>
                     <?php else: ?>
-                        <button class="button button-disabled full-width" disabled><?= e(unitStatusLabel((string) $unit['status'], true)) ?></button>
+                        <button class="button button-disabled full-width" disabled><?= e(unitStatusLabel((string) $unit['status'])) ?></button>
                     <?php endif; ?>
                 </div>
             </aside>

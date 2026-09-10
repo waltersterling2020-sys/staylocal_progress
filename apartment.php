@@ -103,15 +103,13 @@ require __DIR__ . '/partials/header.php';
                                             <p class="unit-type"><?= e($unit['unit_type']) ?> · <?= (int) $unit['size_sqm'] ?> sqm</p>
                                         </div>
                                         <div class="unit-status <?= unitStatusClass((string) $unit['status']) ?>">
-                                            <?= e(unitStatusLabel((string) $unit['status'], true)) ?>
+                                            <?= e(unitStatusLabel((string) $unit['status'])) ?>
                                         </div>
                                     </div>
                                     <div class="unit-card-bottom">
                                         <span class="unit-price"><?= pesos((float) $unit['monthly_rent']) ?><small> / month</small></span>
                                         <?php if ($unit['status'] === 'available'): ?>
                                             <span class="unit-note">View details ↗</span>
-                                        <?php elseif ($unit['status'] === 'reserved'): ?>
-                                            <span class="unit-note">Held for a renter</span>
                                         <?php else: ?>
                                             <span class="unit-note">Check back later</span>
                                         <?php endif; ?>
