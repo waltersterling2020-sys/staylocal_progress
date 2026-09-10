@@ -1,0 +1,13 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# XAMPP/Local temp files
+*.tmp
+*.log
+.vscode/
+.idea/
+
+# Large binaries or backups
+*.zip
+*.bak
