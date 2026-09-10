@@ -916,6 +916,11 @@ button {
     color: #49613f;
 }
 
+.status-reserved {
+    background: #fff0bf;
+    color: #80631d;
+}
+
 .status-taken {
     background: #ecebea;
     color: #697174;

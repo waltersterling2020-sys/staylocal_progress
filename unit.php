@@ -83,8 +83,8 @@ require __DIR__ . '/partials/header.php';
                         <h1>Unit <?= e($unit['unit_number']) ?></h1>
                         <p class="unit-subtitle"><?= e($unit['unit_type']) ?> · <?= (int)$unit['size_sqm'] ?> sqm</p>
                     </div>
-                    <div class="unit-status-tag <?= $unit['status'] === 'available' ? 'status-open' : 'status-taken' ?>">
-                        <?= $unit['status'] === 'available' ? 'Available' : 'Occupied' ?>
+                    <div class="unit-status-tag <?= unitStatusClass((string) $unit['status']) ?>">
+                        <?= e(unitStatusLabel((string) $unit['status'])) ?>
                     </div>
                 </div>
 
@@ -125,7 +125,7 @@ require __DIR__ . '/partials/header.php';
                         <a href="visit.php?unit_id=<?= (int)$unit['id'] ?>" class="button button-light full-width secondary-action">Schedule in-person visit</a>
                         <p class="visit-disclaimer">Reserve online, then schedule your viewing. Final contract signing is completed in person.</p>
                     <?php else: ?>
-                        <button class="button button-disabled full-width" disabled>Currently Occupied</button>
+                        <button class="button button-disabled full-width" disabled><?= e(unitStatusLabel((string) $unit['status'], true)) ?></button>
                     <?php endif; ?>
                 </div>
             </aside>

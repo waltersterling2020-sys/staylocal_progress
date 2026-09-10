@@ -51,6 +51,25 @@ function pesos(int|float $amount): string
     return '₱' . number_format((float) $amount, 0);
 }
 
+function unitStatusClass(string $status): string
+{
+    return match ($status) {
+        'available' => 'status-open',
+        'reserved' => 'status-reserved',
+        default => 'status-taken',
+    };
+}
+
+function unitStatusLabel(string $status, bool $long = false): string
+{
+    return match ($status) {
+        'available' => 'Available',
+        'reserved' => $long ? 'Currently reserved' : 'Reserved',
+        'occupied' => $long ? 'Currently occupied' : 'Occupied',
+        default => ucfirst($status),
+    };
+}
+
 function adminSessionStart(): void
 {
     if (session_status() !== PHP_SESSION_ACTIVE) {
